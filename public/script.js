@@ -514,3 +514,28 @@ function addSongToPlaylist(plId) {
         }
     }
 }
+
+// --- PWA SERVICE WORKER REGISTRATION ---
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Pastikan file sw.js ada di folder public
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('PWA: Service Worker terdaftar!', reg))
+            .catch(err => console.log('PWA: Service Worker gagal:', err));
+    });
+}
+
+// Logika tombol install otomatis agar muncul di HP
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Opsional: Kamu bisa buat tombol muncul di UI di sini
+    console.log('PWA: Aplikasi siap di-install. Klik menu titik tiga di browser dan pilih "Instal Aplikasi"');
+});
+
+// Menangani kondisi jika aplikasi sudah terinstall
+window.addEventListener('appinstalled', (evt) => {
+    console.log('PWA: Aplikasi berhasil di-install ke layar utama!');
+});
