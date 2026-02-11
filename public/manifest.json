@@ -3,8 +3,8 @@
   "name": "FL1NN MUSIC - Streaming Player",
   "icons": [
     {
-      "src": "icon-512.png",
-      "type": "image/png",
+      "src": "https://i.ibb.co.com/KpkL18YC/WhatsApp-Image-2026-02-10-at-17-35-34.jpg",
+      "type": "image/jpeg",
       "sizes": "512x512",
       "purpose": "any maskable"
     }
@@ -13,6 +13,6 @@
   "background_color": "#121212",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#1DB954",
-  "description": "Flinn Music Hub Player - Your Ultimate Music Experience"
+  "theme_color": "#1db954",
+  "description": "Flinn Music Hub Player"
 }
