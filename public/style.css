@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --bg-color: #121212;
-    --nav-color: #000000;
-    --green: #1db954;
-    --gray: #b3b3b3;
-    --card-bg: #181818;
-    --card-hover: #282828;
+    --bg-color: #0f0f15;
+    --nav-color: #050505;
+    --accent-color: #8a2be2;   /* Ganti Hijau jadi Ungu Neon */
+    --secondary-color: #00d4ff; /* Biru Elektrik buat variasi */
+    --gray: #9ca3af;
+    --card-bg: #1a1a24;
+    --card-hover: #252535;
     --text-white: #ffffff;
 }
 
@@ -32,7 +33,7 @@ body {
     padding-bottom: 100px;
     /* Pastikan solid agar tidak transparan */
     background-color: var(--bg-color); 
-    background: linear-gradient(180deg, #202020 0%, #121212 20%);
+    background: linear-gradient(180deg, #1e122d 0%, #0f0f15 20%);
     z-index: 10;
 }
 
@@ -51,7 +52,7 @@ body {
 .username { font-size: 24px; font-weight: 800; color: white; }
 .header-icons { display: flex; gap: 20px; }
 .header-icons i { font-size: 20px; color: white; cursor: pointer; transition: 0.2s; }
-.header-icons i:hover { color: var(--green); }
+.header-icons i:hover { color: var(--accent-color); }
 
 .category-chips {
     display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; margin-bottom: 25px;
@@ -62,7 +63,7 @@ body {
     font-size: 13px; font-weight: 500; white-space: nowrap; transition: 0.2s;
     border: 1px solid transparent;
 }
-.cat-chip.active { background: var(--green); color: black; font-weight: 700; }
+.cat-chip.active { background: var(--accent-color); color: white; font-weight: 700; box-shadow: 0 0 10px var(--accent-color); }
 
 /* --- HOME: QUICK GRID --- */
 .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px; }
@@ -91,7 +92,7 @@ body {
     background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
     padding: 15px; display: flex; flex-direction: column; justify-content: flex-end;
 }
-.hero-content .tag { font-size: 10px; font-weight: 800; color: var(--green); letter-spacing: 1px; margin-bottom: 4px; }
+.hero-content .tag { font-size: 10px; font-weight: 800; color: var(--secondary-color); letter-spacing: 1px; margin-bottom: 4px; }
 .hero-content h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 .hero-content p { font-size: 12px; color: #ddd; font-weight: 500; }
 
@@ -131,8 +132,8 @@ body {
 .result-info p { font-size: 13px; color: var(--gray); }
 
 /* --- LOADING --- */
-.loading-state { text-align: center; margin-top: 40px; color: var(--green); font-weight: 600; }
-.spinner { border: 3px solid rgba(255,255,255,0.1); border-top: 3px solid var(--green); border-radius: 50%; width: 24px; height: 24px; animation: spin 0.8s linear infinite; display: inline-block; vertical-align: middle; margin-right: 10px; }
+.loading-state { text-align: center; margin-top: 40px; color: var(--accent-color); font-weight: 600; }
+.spinner { border: 3px solid rgba(255,255,255,0.1); border-top: 3px solid var(--accent-color); border-radius: 50%; width: 24px; height: 24px; animation: spin 0.8s linear infinite; display: inline-block; vertical-align: middle; margin-right: 10px; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
 /* --- LIBRARY --- */
@@ -151,7 +152,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.6); overflow: hidden; backdrop-filter: blur(10px);
 }
 .progress-bar-bg { width: 100%; height: 2px; background: rgba(255,255,255,0.2); }
-.progress-bar-fill { height: 100%; background: white; width: 0%; border-radius: 0 2px 2px 0; }
+.progress-bar-fill { height: 100%; background: white; width: 0%; border-radius: 0 2px 2px 0; background: linear-gradient(90deg, var(--accent-color), var(--secondary-color)); }
 .player-content { display: flex; align-items: center; padding: 0 12px; gap: 12px; height: 100%; }
 .player-content img { width: 42px; height: 42px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
 .mini-info { flex: 1; overflow: hidden; white-space: nowrap; }
@@ -212,7 +213,7 @@ body {
 .playlist-header-view h1 { font-size: 24px; font-weight: 800; margin-bottom: 5px; }
 .playlist-header-view .tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gray); margin-bottom: 10px; }
 .play-all-btn {
-    margin-top: 15px; background: var(--green); color: black; border: none;
+    margin-top: 15px; background: var(--accent-color); color: white; border: none;
     padding: 12px 30px; border-radius: 30px; font-weight: 700; font-size: 14px;
     cursor: pointer; transition: transform 0.2s; display: flex; align-items: center; gap: 8px;
 }
@@ -250,7 +251,7 @@ body {
 .modal-btns { display: flex; gap: 10px; margin-top: 10px; }
 .modal-btns button { flex: 1; padding: 12px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; }
 .btn-cancel { background: transparent; color: white; border: 1px solid #555 !important; }
-.btn-save { background: var(--green); color: black; }
+.btn-save { background: var(--accent-color) color: white; }
 .full-width { width: 100%; margin-top: 10px; }
 
 /* LIST PLAYLIST DI MODAL */
